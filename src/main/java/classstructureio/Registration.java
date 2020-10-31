@@ -10,12 +10,12 @@ public class Registration {
         System.out.println("Please enter your name");
 
         String name = scanner.nextLine();
-        System.out.println("Provide email adress too");
+        System.out.println("Provide email address too");
         String email = scanner.nextLine();
 
-        System.out.println("Registration reqested with the following data:");
-        System.out.println("Name: " + name);
-        System.out.println("Email: " + email);
+        System.out.println("Registration requested with the following data:");
+        System.out.println("\tName: " + name);
+        System.out.println("\tEmail: " + email);
 
     }
 }
