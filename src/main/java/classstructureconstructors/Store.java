@@ -4,12 +4,8 @@ public class Store {
     private String product;
     private int stock;
 
-    public void store(int increase) {
-        setStock(this.stock = this.stock + increase);
-    }
-    public void dispatch(int decrease) {
-        setStock(stock = this.stock - decrease);
-    }
+    public void store(int increase) { stock = stock + increase; }
+    public void dispatch(int decrease) { stock = stock - decrease; }
 
     public Store(String product) {
         this.product = product;
