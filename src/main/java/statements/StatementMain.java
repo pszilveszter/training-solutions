@@ -6,7 +6,7 @@ public class StatementMain {
         int y = 11 - x;
         int z = 8;
         boolean b = x > y;
-        boolean c = b == true || z > 5; //solutions:boolean c = b || (z > 5); -- b = true csak ebben a feladatban. Minek a zárójel? Elvileg kiértékeli a belső kifejezéseket
+        boolean c = b || z > 5; //még mindíg nem értem a megoldásban a z > 5 miért van zárójelben, tudtommal a belső kifejezésekkel kezdi
         z++;
     }
 }
