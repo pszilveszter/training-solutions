@@ -18,13 +18,13 @@ public class Product {
     }
 
     public boolean areTheyEqual(Product p) {
-        return name.equals(p.name);
+        return name.equals(p.name) && (code.length() - p.code.length() < 2) || code.length() - p.code.length() > 2);
     }
 
     public static void main(String[] args) {
-        Product p1 = new Product("név","code1");
-        Product p2 = new Product("név","code2");
-        Product p3 = new Product("név3","code3");
+        Product p1 = new Product("név","code");
+        Product p2 = new Product("név","code1");
+        Product p3 = new Product("név3","code123");
 
         System.out.println(p1.areTheyEqual(p2));
         System.out.println(p1.areTheyEqual(p3));
