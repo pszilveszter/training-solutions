@@ -15,7 +15,7 @@ public class InputNames {
 
 
         for (String name : names) {
-            System.out.println(name + (Math.abs(i - 6)));
+            System.out.println(name + (Math.abs(i - i + 1)));
             i--;
         }
 
