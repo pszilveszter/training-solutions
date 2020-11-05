@@ -10,12 +10,11 @@ public class InputNames {
 
         for (int a = 0; a < i; a++) {
             System.out.println("Név:");
-            names[a] = sc.nextLine();
+            names[a] = sc.nextLine() + (a + 1);
         }
 
-
         for (String name : names) {
-            System.out.println(name + (Math.abs(i - i + 1)));
+            System.out.println(name);
             i--;
         }
 
