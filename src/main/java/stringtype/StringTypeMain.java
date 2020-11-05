@@ -17,7 +17,7 @@ public class StringTypeMain {
 
         String abc = "Abcde";
         System.out.println("Az Abcde String hossza: " + abc.length());
-        System.out.println("Az első és harmadik karaktere (0-tól indexelünk) vesszővel elválasztva: " + abc.substring(0,1) + "," + abc.substring(2,3));
+        System.out.println("Az első és harmadik karaktere (0-tól indexelünk) vesszővel elválasztva: " + abc.charAt(0) + "," + abc.charAt(2)); // JAVÍTVA SOLUTIONS ALAPJÁN: Substring() ==> charAt()
         System.out.println("Az elsőtől a harmadik karakterig tartó részlete: " + abc.substring(0,3)); // Feladat szerint a 3-ik karater-IG, tehát az már nem
     }
 }
