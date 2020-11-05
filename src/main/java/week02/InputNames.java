@@ -15,7 +15,6 @@ public class InputNames {
 
         for (String name : names) {
             System.out.println(name);
-            i--;
         }
 
     }
