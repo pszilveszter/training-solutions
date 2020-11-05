@@ -16,5 +16,9 @@ public class Registration {
         System.out.println("Jelszó mégegszer:");
         String inputPW2 = scanner.nextLine();
         System.out.println(validateInput.isValidPassword(inputPW1, inputPW2) ? "Adat mentve" : "Hibás adat");
+
+        System.out.println("Email:");
+        String inputE = scanner.nextLine();
+        System.out.println(validateInput.isValidEmail(inputE) ? "Adat mentve" : "Hibás adat");
     }
 }

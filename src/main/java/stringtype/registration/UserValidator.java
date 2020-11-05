@@ -13,7 +13,12 @@ public class UserValidator {
     }
 
     public boolean isValidEmail(String email) {
-        return true;
+        int iLen = email.length();
+        int iAt = email.indexOf("@");
+        int iDot = email.indexOf(".");
+        return (iAt > 0)
+                && (iDot > iAt + 1)
+                && (iDot + 1 != iLen);
     }
 
 }
