@@ -3,9 +3,8 @@ package introcontrol;
 public class IntroControl {
     public int substractTenIfGreaterThanTen(int number) {
         int x = 10;
-        boolean b = !(number > 10);
 
-        if (b) {
+        if (!(number > x)) {
             return number;
         }
         return  number - x;
@@ -28,7 +27,7 @@ public class IntroControl {
     public int calculateBonus(int sale) {
         int min = 1_000_000;
         if (!(sale < min)) {
-            sale = sale / 100 * 10;
+            sale = sale / 10;
         } else {
             sale = 0;
         }
