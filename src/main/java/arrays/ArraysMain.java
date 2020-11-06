@@ -13,19 +13,24 @@ public class ArraysMain {
 
         System.out.println("daysOfWeek");
         System.out.println(array.daysOfWeek());
+
+        System.out.println("multiplicationTableAsString");
+        System.out.println(array.multiplicationTableAsString(5));
+
     }
-/*
+
     public String multiplicationTableAsString(int size) {
         int[][] multiplicationTable = new int[size][size];
 
-        for (int outer = 0; outer) > size;
+        for (int outer = 0; outer < size; outer++) {
+            for (int inner = 0; inner < size; inner++) {
+                multiplicationTable[outer][inner] = (outer + 1) * (inner + 1);
+            }
+        }
+
+        return Arrays.deepToString(multiplicationTable);
     }
-    /*************************************************************************************
-* Ajaj, ez a feladat nekem listának tünik, amit még nem vettem, visszatérek később
-* UPDATE: Nem baj, azért megpróbálom a korábbi tapasztalatok alapján
-* Hát csak sikerült, remélem jól értelmeztem
-* És a feladatot jobban átgondolva most tanultuk a tömbök listává alakítását is!!! FINAL
-****************************************************************************************** */
+
     public List<String> daysOfWeek() {
         String[] dayNames = {"Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"};
         return Arrays.asList(dayNames);
