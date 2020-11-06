@@ -71,11 +71,25 @@ public class ArrayOfArraysMain {
             StringBuilder line = new StringBuilder();
 
             for (int j: i) {
-                line.append(j + " ");
+                line.append(arrangeDigit(j) + " ");
             }
 
             System.out.println(line);
         }
+    }
+
+    public String arrangeDigit(Integer a) {
+        if (a > 99) {
+            return a.toString();
+        } else {
+            if (a > 9) {
+                return " " + a;
+            } else {
+                return "  " + a;
+            }
+        }
+
+
     }
 
 }
