@@ -1,6 +1,7 @@
 package arrays;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ArraysMain {
@@ -14,8 +15,13 @@ public class ArraysMain {
         System.out.println("daysOfWeek");
         System.out.println(array.daysOfWeek());
     }
+/*
+    public String multiplicationTableAsString(int size) {
+        int[][] multiplicationTable = new int[size][size];
 
-/*************************************************************************************
+        for (int outer = 0; outer) > size;
+    }
+    /*************************************************************************************
 * Ajaj, ez a feladat nekem listának tünik, amit még nem vettem, visszatérek később
 * UPDATE: Nem baj, azért megpróbálom a korábbi tapasztalatok alapján
 * Hát csak sikerült, remélem jól értelmeztem
@@ -36,10 +42,6 @@ public class ArraysMain {
 
     public String numberOfDaysAsString() {
         int[] numberOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        String daysOfMoths = "";
-        for (int monthDays: numberOfDays) {
-            daysOfMoths += monthDays + " ";
-        }
-        return daysOfMoths;
+        return Arrays.toString(numberOfDays); // Közben rájöttem az adott tananyaghoz ez jobban illeszkedik
     }
 }
