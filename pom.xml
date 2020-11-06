@@ -16,7 +16,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>arrayofarrays.ArrayOfArraysMain</mainClass>
+                            <mainClass>arrays.ArraysMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
