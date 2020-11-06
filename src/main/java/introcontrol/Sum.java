@@ -8,7 +8,7 @@ public class Sum {
         int r = 0;
         for (int i = 0; i < 5; i++) {
             System.out.println(i +1 + ". szám");
-            r = r + scanner.nextInt();
+            r += scanner.nextInt(); //JAVÍTVA SAMPLE ALAPJÁN <== r = r + scanner.nextInt();
         }
 
         System.out.println("A számok összege: " + r);
