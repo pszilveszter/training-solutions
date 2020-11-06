@@ -24,23 +24,16 @@ public class ArraysMain {
 * Ajaj, ez a feladat nekem listának tünik, amit még nem vettem, visszatérek később
 * UPDATE: Nem baj, azért megpróbálom a korábbi tapasztalatok alapján
 * Hát csak sikerült, remélem jól értelmeztem
-************************************************************************************** */
+* És a feladatot jobban átgondolva most tanultuk a tömbök listává alakítását is!!! FINAL
+****************************************************************************************** */
     public List<String> daysOfWeek() {
-        List<String> dayNames= new ArrayList<>();
-        dayNames.add("Hétfő");
-        dayNames.add("Kedd");
-        dayNames.add("Szerda");
-        dayNames.add("Csütörtök");
-        dayNames.add("Péntek");
-        dayNames.add("Szombat");
-        dayNames.add("Vasárnap");
-
-        return dayNames;
+        String[] dayNames = {"Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"};
+        return Arrays.asList(dayNames);
     }
 
 
     public String numberOfDaysAsString() {
         int[] numberOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        return Arrays.toString(numberOfDays); // Közben rájöttem az adott tananyaghoz ez jobban illeszkedik
+        return Arrays.toString(numberOfDays);
     }
 }
