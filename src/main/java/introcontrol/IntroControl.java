@@ -34,9 +34,12 @@ public class IntroControl {
         return sale;
     }
 
-    public int calculateConsumption(int prev, int next) {
-        if (next == 9999) next = 0;
-        return Math.abs(next - prev);
+    public int calculateConsumption(int prev, int next) { // JAVÍTVA SAMPLE ALAPJÁN
+        if (prev <= next) {
+            return next - prev;
+        } else {
+            return 10_000 - prev + next;
+        }
     }
 
     public void printNumbers(int max) {

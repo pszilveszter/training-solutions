@@ -22,11 +22,11 @@ public class IntroControlMain {
         System.out.println(control.calculateBonus(q2));
 
         int prev1 = 1;
-        int next1 = 9998;
-        int prev2 = 1;
-        int next2 = 9999;
-        System.out.println(control.calculateConsumption(prev1,next1));
-        System.out.println(control.calculateConsumption(prev2,next2));
+        int next1 = 9999;
+        int prev2 = 9999;
+        int next2 = 10000;
+        System.out.println("calculateConsumption: " + control.calculateConsumption(prev1,next1));
+        System.out.println("calculateConsumption: " + control.calculateConsumption(prev2,next2));
 
         control.printNumbers(x);
         control.printNumbersBetween(prev1, x);
