@@ -20,21 +20,26 @@ public class ArraysMain {
         System.out.println("\nsameTempValues");
             int whole = 20;
             double[] day1 = new double[24];
-            double[] day2 = new double[24];
-            double[] day3;
+            double[] dayDifferent = new double[24];
+            double[] day2;
             for (int i = 0; i < day1.length; i++) {
                 double decimal = i * 0.1;
-                day1[i] = whole + decimal;
-                if (i == 1) {
-                    day2[i] = whole + 2 * decimal;
+                if (i < day1.length / 2) {
+                    day1[i] = whole + decimal;
                 } else {
-                    day2[i] = whole + decimal;
+                    day1[i] = whole - decimal;
+                }
+
+                if (i == 1) {
+                    dayDifferent[i] = whole + 2 * decimal;
+                } else {
+                    dayDifferent[i] = day1[i];
                 }
             }
-            day3 = Arrays.copyOf(day1, 24);
+            day2 = Arrays.copyOf(day1, 24);
 
             System.out.println(array.sameTempValues(day1, day2));
-            System.out.println(array.sameTempValues(day1, day3));
+            System.out.println(array.sameTempValues(day1, dayDifferent));
 
         System.out.println("\nwonLottery");
             int[] bet = {88, 77, 4, 13, 23};
@@ -50,6 +55,34 @@ public class ArraysMain {
                 } else {
                     System.out.println("XXX A rendezésnek van visszahatása XXX");
                 }
+
+        System.out.println("\nsameTempValuesDaylight"); // Bónusz
+        double[] day23 = Arrays.copyOf(day1, 23);
+        double[] day25 = Arrays.copyOf(day1, 25);
+        day25[day1.length] = 19.8;
+        System.out.println(array.sameTempValuesDayLight(day23, day25));
+        day23 = Arrays.copyOf(dayDifferent,23);
+        System.out.println(array.sameTempValuesDayLight(day23, day25));
+    }
+
+
+    public boolean sameTempValuesDayLight(double[] day, double[] anotherDay) {
+        int daySize = day.length;
+        int anotherDaySize = anotherDay.length;
+        int cutHoursTo = min(daySize, anotherDaySize);
+
+        double[] day1 = Arrays.copyOfRange(day,0,cutHoursTo);
+        double[] day2 = Arrays.copyOfRange(anotherDay,0, cutHoursTo);
+
+        return Arrays.equals(day1, day2);
+    }
+
+    public int min(int size1, int size2) {
+        if (size1 < size2) {
+            return size1;
+        } else {
+            return size2;
+        }
     }
 
 
