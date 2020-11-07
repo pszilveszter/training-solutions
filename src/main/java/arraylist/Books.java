@@ -17,8 +17,27 @@ public class Books {
         System.out.println(book.findAllByPrefix("gram"));
         System.out.println(book.findAllByPrefix("Pro"));
         System.out.println(book.getTitles());
+
+        System.out.println("Bonus");
+        book.removeByPrefix("gram");
+        System.out.println(book.getTitles());
+        book.removeByPrefix("Pro");
+        System.out.println(book.getTitles());
+
     }
 
+    public void removeByPrefix(String prefix) {
+        List<String> unMatch = new ArrayList<>();
+        int prefixSize = prefix.length();
+        for (String title: titles) {
+            if (!title.substring(0,prefixSize).equals(prefix)) {
+                unMatch.add(title);
+            }
+        }
+
+        titles.removeAll(getTitles());
+        titles.addAll(unMatch);
+    }
 
     public void add(String title) {
         titles.add(title);
@@ -37,11 +56,7 @@ public class Books {
     }
 
     public List<String> getTitles() {
-        List<String> books = new ArrayList<>();
-        for (String title: titles) {
-            books.add(title);
-        }
-        return books;
+        return titles;
     }
 
 
