@@ -18,11 +18,23 @@ public class ArraysMain {
         System.out.println(array.multiplicationTableAsString(5));
 
         System.out.println("\nsameTempValues");
-        double[] day1 = {20.5, 20.8, 21.1, 21.3, 21.5, 21.8, 22.2, 22.7, 22.8, 23.1, 23.2, 23.3, 23.4, 23.4, 23.2, 23.1, 22.9, 22.6, 22.2, 21.7, 21.2, 20.9, 20.4};
-        double[] day2 = {20.5, 20.8, 21.1, 21.3, 21.5, 21.8, 22.2, 22.7, 22.8, 23.1, 23.2, 23.3, 23.4, 23.4, 23.2, 23.1, 22.9, 22.6, 22.2, 21.7, 21.2, 20.9, 20.4};
-        double[] day3 = {20.6, 20.8, 21.1, 21.3, 21.5, 21.8, 22.2, 22.7, 22.8, 23.1, 23.2, 23.3, 23.4, 23.4, 23.2, 23.1, 22.9, 22.6, 22.2, 21.7, 21.2, 20.9, 20.4};
+        int whole = 20;
+        double[] day1 = new double[24];
+        double[] day2 = new double[24];
+        double[] day3;
+        for (int i = 0; i < day1.length; i++) {
+            double decimal = i * 0.1;
+            day1[i] = whole + decimal;
+            if (i == 1) {
+                day2[i] = whole + 2 * decimal;
+            } else {
+                day2[i] = whole + decimal;
+            }
+        }
+        day3 = Arrays.copyOf(day1, 24);
+
         System.out.println(array.sameTempValues(day1, day2));
-        System.out.println(array.sameTempValues(day2, day3));
+        System.out.println(array.sameTempValues(day1, day3));
 
         System.out.println("\nwonLottery"); //renzedési vizsgálat behúzással
         int[] bet = {88, 77, 4, 13, 23};
