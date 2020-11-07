@@ -20,6 +20,15 @@ public class Capsules {
         pipe.addFirst("red");
         System.out.println(pipe.getColors());
 
+        System.out.println("Bónusz 1");
+        List<String> productArchive = new ArrayList<>(pipe.getColors());
+        productArchive.clear();
+        if (productArchive.equals(pipe.getColors())) {
+            System.out.println("A clear metódus hatással volt az eredeti List objektumra");
+        } else {
+            System.out.println("A clear metódus nem volt hatással az eredeti List objektumra");
+        }
+
     }
 
 
