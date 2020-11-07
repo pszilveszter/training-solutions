@@ -11,13 +11,26 @@ public class ArraysMain {
         System.out.println("numberOfDaysAsString");
         System.out.println(array.numberOfDaysAsString());
 
-        System.out.println("daysOfWeek");
+        System.out.println("\ndaysOfWeek");
         System.out.println(array.daysOfWeek());
 
-        System.out.println("multiplicationTableAsString");
+        System.out.println("\nmultiplicationTableAsString");
         System.out.println(array.multiplicationTableAsString(5));
 
+        System.out.println("\nsameTempValues");
+        double[] day1 = {20.5, 20.8, 21.1, 21.3, 21.5, 21.8, 22.2, 22.7, 22.8, 23.1, 23.2, 23.3, 23.4, 23.4, 23.2, 23.1, 22.9, 22.6, 22.2, 21.7, 21.2, 20.9, 20.4};
+        double[] day2 = {20.5, 20.8, 21.1, 21.3, 21.5, 21.8, 22.2, 22.7, 22.8, 23.1, 23.2, 23.3, 23.4, 23.4, 23.2, 23.1, 22.9, 22.6, 22.2, 21.7, 21.2, 20.9, 20.4};
+        double[] day3 = {20.6, 20.8, 21.1, 21.3, 21.5, 21.8, 22.2, 22.7, 22.8, 23.1, 23.2, 23.3, 23.4, 23.4, 23.2, 23.1, 22.9, 22.6, 22.2, 21.7, 21.2, 20.9, 20.4};
+        System.out.println(array.sameTempValues(day1, day2));
+        System.out.println(array.sameTempValues(day2, day3));
+
     }
+
+
+    public boolean sameTempValues(double[] day, double[] anotherDay) {
+        return  Arrays.equals(day, anotherDay);
+    }
+
 
     public String multiplicationTableAsString(int size) {
         int[][] multiplicationTable = new int[size][size];
@@ -30,6 +43,7 @@ public class ArraysMain {
 
         return Arrays.deepToString(multiplicationTable);
     }
+
 
     public List<String> daysOfWeek() {
         String[] dayNames = {"Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat", "Vasárnap"};
