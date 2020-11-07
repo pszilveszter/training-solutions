@@ -1,7 +1,5 @@
 package arrayofarrays;
 
-import java.time.Month;
-
 public class ArrayOfArraysMain {
 
     public static void main(String[] args) {
@@ -22,16 +20,11 @@ public class ArrayOfArraysMain {
 
 
     public int[][] getValues() {
+        int[] numberOfDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int[][] months = new int[12][];
-        int endDay;
 
-        for (int m = 0; m < months.length; m++) {
-            endDay = (Month.of(m + 1)).maxLength();
-            if (endDay == 29) {
-                endDay--;
-            }
-
-            months[m] = new int[endDay];
+        for (int m = 0; m < numberOfDays.length; m++) {
+            months[m] = new int[numberOfDays[m]];
         }
 
         return months;
@@ -67,29 +60,26 @@ public class ArrayOfArraysMain {
 
     public void printArrayofArrays(int[][] a) {
         for (int[] i: a) {
-
-            StringBuilder line = new StringBuilder();
-
             for (int j: i) {
-                line.append(arrangeDigit(j) + " ");
+                System.out.print(arrangeDigit(j) + " ");
             }
-
-            System.out.println(line);
+            System.out.println();
         }
     }
 
-    public String arrangeDigit(Integer a) {
+    public String arrangeDigit(Integer a) { // Bónusz track
+        String result;
         if (a > 99) {
-            return a.toString();
+            result = a.toString();
         } else {
             if (a > 9) {
-                return " " + a;
+                result = " " + a;
             } else {
-                return "  " + a;
+                result = "  " + a;
             }
         }
 
-
+        return result;
     }
 
 }
