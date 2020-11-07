@@ -1,4 +1,4 @@
-package debug;
+package debug.companymain;
 
 public class Employee {
     private String name;
