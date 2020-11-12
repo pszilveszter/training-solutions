@@ -28,7 +28,5 @@ public class Product {
 
         System.out.println(p1.areTheyEqual(p2));
         System.out.println(p1.areTheyEqual(p3));
-
-        // kódok különbsége???? MA nem tudok beszélni, de ezt a részt nem értem
     }
 }
