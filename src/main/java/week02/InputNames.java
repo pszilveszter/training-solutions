@@ -10,11 +10,12 @@ public class InputNames {
 
         for (int a = 0; a < i; a++) {
             System.out.println("Név:");
-            names[a] = sc.nextLine() + (a + 1);
+            names[a] = sc.nextLine();
         }
 
         for (String name : names) {
-            System.out.println(name);
+            System.out.println(i - 4 + ".elem: " + name);
+            i++;
         }
 
     }
