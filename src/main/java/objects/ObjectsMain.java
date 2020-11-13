@@ -1,5 +1,6 @@
 package objects;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -84,5 +85,19 @@ public class ObjectsMain {
             System.out.println("A program végén ennyi book példány van ami hozzáférhető: " + count);
 
         // 6 objektum jön létre (book1-6) és 5 objektum lesz hozzáférhető (book1-5)
+
+
+        //Definiálj egy Book tömböt, és adj értékül neki egy tömb literált, három példányosított Book objektummal!
+        Book[] bookArray = {new Book(), new Book(), new Book()};
+
+        //Definiálj egy List<Book> kollekciót, és az Arrays.asList() metódust használva tegyél bele három példányosított elemet!
+        List<Book> bookList = Arrays.asList(new Book(), new Book(), new Book());
+
+        //Definiálj egy List<Book> üres kollekciót, majd adj hozzá három példányosított objektumot!
+        List<Book> emptyBookList = new ArrayList<>();
+        emptyBookList.add(new Book());
+        emptyBookList.add(new Book());
+        emptyBookList.add(new Book());
+
     }
 }
