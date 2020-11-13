@@ -1,5 +1,8 @@
 package objects;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class ObjectsMain {
     public static void main(String[] args){
 
@@ -56,11 +59,30 @@ public class ObjectsMain {
         Book book5 = book1;
         Book book6 = book3;
         Book book7 = null;
+            //Ellenőrzés
+            List<Book> books = Arrays.asList(book1,book2,book3,book4,book5,book6,book7);
+            System.out.println("Mennyi book változó van: " + books.size());
+            int count = 0;
+            for (Book b: books) {
+                if (b instanceof Book) {
+                    count++;
+                }
+            }
+            System.out.println("Mennyi book példány van: " + count);
         book4 = book5;
         book5 = new Book();
         book6 = null;
+            //Ellenőrzés
+            books = Arrays.asList(book1,book2,book3,book4,book5,book6,book7);
+            System.out.println("A program végén mennyi book változó van: " + books.size());
+            count = 0;
+            for (Book b: books) {
+                if (b instanceof Book) {
+                    count++;
+                }
+            }
+            System.out.println("A program végén ennyi book példány van ami hozzáférhető: " + count);
 
         // 6 objektum jön létre (book1-6) és 5 objektum lesz hozzáférhető (book1-5)
-
     }
 }
