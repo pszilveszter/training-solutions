@@ -45,5 +45,22 @@ public class ObjectsMain {
 
         //Vizsgáld meg, hogy az anotherBook változó értéke Book típusú-e! Ehhez az instanceof operátort kell használni, azaz System.out.println(anotherBook instanceof Book);
         System.out.println("Book tipusu-e az anotherBook változó: " + (anotherBook instanceof Book));
+
+
+        //Objektumok száma
+        //A következő kód hány objektumot hoz létre? A futás végére mennyi objektumhoz lehet hozzáférni?
+        Book book1 = new Book();
+        Book book2 = new Book();
+        Book book3 = new Book();
+        Book book4 = book1;
+        Book book5 = book1;
+        Book book6 = book3;
+        Book book7 = null;
+        book4 = book5;
+        book5 = new Book();
+        book6 = null;
+
+        // 6 objektum jön létre (book1-6) és 5 objektum lesz hozzáférhető (book1-5)
+
     }
 }
