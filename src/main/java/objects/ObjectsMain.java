@@ -1,0 +1,49 @@
+package objects;
+
+public class ObjectsMain {
+    public static void main(String[] args){
+
+        //Példányosíts egy Book objektumot, de ne add értékül semminek! Meg tudod ezt tenni? Hozzá tudsz férni később?
+        new Book(); // lehet pédányosítani, de nem lehet kezdeni vele semmit, ott vana a Heap-en mint tű a szénakazlban
+
+        //A System.out.println() metódus paramétereként adj át egy, a paraméterben most példányosított objektumot! Mit ír ki?
+        System.out.println("paraméterben példányosított objektum: " + new Book()); // kiírja az objektum generált hivatkozását
+
+        //Deklarálj egy Book típusú emptyBook változót, de ne adj neki értéket, hanem azonnal írd ki az értékét! Fog sikerülni?
+        Book emptyBook;
+        //System.out.println(emptyBook); // nem lehet fordítani sem, mert nincs inicializálva, kiírni főképp nem lehet
+
+        //Adj neki értéket, méghozzá a null literált! Írasd ki az értékét!
+        emptyBook = null;
+        System.out.println("epmtyBook null literál értékkel: " + emptyBook); // kiírás = "null", nincs .toString() metódusa!
+
+        //Vizsgáld meg, hogy az emptyBook változó értéke null érték-e! Írd ki a vizsgálat eredményét!
+//        if (emptyBook.equals(null)) {
+//            System.out.println("emptyBook változó értéke \"null\"");
+//        } else {
+//            System.out.println("emptyBook változó értéke nem \"null\" hanem hiba: nem lehet meghívni mert a változó maga null");
+//        } Nem lehet meghívni, mert az objektum maga null, nincs se attributuma, se metódusai
+
+        //Definiálj egy book nevű változót, és add értékül neki a definíciós utasításban példányosított Book objektumot!
+        Book book = new Book();
+        //Írasd ki a book változó értékét!
+        System.out.println("Új book példány: " + book);
+        //Adj neki értékül egy új Book példányt, majd írd ki!
+        book = new Book();
+        System.out.println("Uyganaz a book változó egy új példánnyal: " + book);
+
+        //Hozz létre egy anotherBook változót, és adj értékül neki egy új Book példányt!
+        Book anotherBook = new Book();
+
+        //Hasonlítsd össze egyenlőség operátorral (==) a book és az anotherBook változó értékét, és írd ki az eredményt!
+        System.out.println("book és anotherBook összehasonlítás eredménye: " + (book == anotherBook));
+
+        //A anotherBook változó értékéül add a book változó értékét! Írd ki! Hasonlítsd össze egyenlőség operátorral (==) a book és az anotherBook változó értékét, és írd ki az eredményt!
+        anotherBook = book;
+        System.out.println("anotherBook értéke" + anotherBook.toString());
+        System.out.println("book és anotherBook ismételt összehasonlítás eredménye: " + (anotherBook == book));
+
+        //Vizsgáld meg, hogy az anotherBook változó értéke Book típusú-e! Ehhez az instanceof operátort kell használni, azaz System.out.println(anotherBook instanceof Book);
+        System.out.println("Book tipusu-e az anotherBook változó: " + (anotherBook instanceof Book));
+    }
+}
