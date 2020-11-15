@@ -22,9 +22,6 @@ public class ToDo {
 
     @Override
     public String toString() {
-        return "\n\tElintézendő{" +
-                "\n\t\tTéma= " + caption +
-                "\n\t\tStátusz= " + (finished ? "KÉSZ" : "Folyamatban") +
-                "}";
+        return caption + "(" + (finished ? "KÉSZ" : "Folyamatban") + ")";
     }
 }

@@ -9,12 +9,15 @@ public class TodoListMain {
         todoList.addTodo("Vizsga");
         todoList.addTodo("Karácsonyi készülődés");
 
-        System.out.println(todoList.todosToFinish().size() + todoList.numberOfFinishedTodos() + "/" + todoList.numberOfFinishedTodos() + ":"  + todoList);
+        System.out.println(todoList.todosToFinish().size() + todoList.numberOfFinishedTodos() + "/" + todoList.numberOfFinishedTodos() + " Tennivaló kész");
+        System.out.println(todoList);
 
         todoList.finishTodos("Java tanulás 1. hét");
-        System.out.println(todoList.todosToFinish().size() + todoList.numberOfFinishedTodos() + "/" + todoList.numberOfFinishedTodos() + ":"  + todoList);
+        System.out.println(todoList.todosToFinish().size() + todoList.numberOfFinishedTodos() + "/" + todoList.numberOfFinishedTodos() + " Tennivaló kész");
+        System.out.println(todoList);
 
         todoList.finishAllTodos(todoList.todosToFinish());
-        System.out.println(todoList.todosToFinish().size() + todoList.numberOfFinishedTodos() + "/" + todoList.numberOfFinishedTodos() + ":"  + todoList);
-        }
+        System.out.println(todoList.todosToFinish().size() + todoList.numberOfFinishedTodos() + "/" + todoList.numberOfFinishedTodos() + " Tennivaló kész");
+        System.out.println(todoList);
+    }
 }

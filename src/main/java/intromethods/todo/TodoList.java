@@ -12,7 +12,7 @@ public class TodoList {
 
     @Override
     public String toString() {
-        return "Tennivalók{" + todos + "}";
+        return todos.toString();
     }
 
     public void finishTodos(String caption) {
