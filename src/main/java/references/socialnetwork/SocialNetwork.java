@@ -13,13 +13,15 @@ public class SocialNetwork {
     public void connect(String name, String otherName) {
         Member memberToConnectTo = findByName(name);
         Member memberToBeConnected = findByName(otherName);
-        memberToConnectTo.connectMember(memberToBeConnected);
+        if (memberToConnectTo != null && memberToBeConnected != null) {
+            memberToConnectTo.connectMember(memberToBeConnected);
+        }
     }
 
     private Member findByName(String nameToFind) {
-        for (int i = 0; i < members.size(); i++) {
-            if (members.get(i).getName().equals(nameToFind)) {
-                return members.get(i);
+        for (Member m : members) {
+            if (m.getName().equals(nameToFind)) {
+                return m;
             }
         }
         return null;
@@ -31,11 +33,15 @@ public class SocialNetwork {
             for (Member connection : member.getConnections()) {
                 Member connectedMember = findByName(connection.getName());
                 if (connectedMember.getConnections().contains(member)) {
-                    String result = member.getName() + " - " + connectedMember.getName();
-                    connections.add(result);
+                    connections.add(member.getName() + " - " + connectedMember.getName());
                 }
             }
         }
         return connections;
+    }
+
+    @Override
+    public String toString() {
+        return members.toString();
     }
 }
