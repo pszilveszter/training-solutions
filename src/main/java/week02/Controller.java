@@ -3,7 +3,7 @@ package week02;
 import java.util.Scanner;
 
 public class Controller {
-    private Office office = new Office();
+    private Office office;
 
     public static void main(String[] args) {
             Controller controller = new Controller();
@@ -14,6 +14,7 @@ public class Controller {
 
 
     public void readOffice() {
+        office = new Office();
         Scanner scanner = new Scanner(System.in);
         System.out.println("A rögzíteni kívánt tárgyalók száma?");
         int nRooms = scanner.nextInt();
