@@ -8,6 +8,6 @@ public class UnitConverterMain {
         UnitConverter converter = new UnitConverter();
         System.out.println(converter.convert(BigDecimal.valueOf(1563.349971),LenghtUnit.FOOT, LenghtUnit.YARD));
         System.out.println(Arrays.asList(LenghtUnit.values()));
-        System.out.println(converter.siUnits());
+        System.out.println(UnitConverter.SIUNITS); // Meghívás osztályon keresztül
     }
 }

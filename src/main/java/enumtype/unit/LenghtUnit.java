@@ -11,6 +11,7 @@ public enum LenghtUnit {
     private final boolean si;
     private final double exchangeRate2MM;
 
+
     LenghtUnit(boolean si, double exchangeRate2MM) {
         this.si = si;
         this.exchangeRate2MM = exchangeRate2MM;
