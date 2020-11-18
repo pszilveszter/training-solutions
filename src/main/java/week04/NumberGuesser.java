@@ -17,7 +17,11 @@ public class NumberGuesser {
             if (t == i) {
                 b = true;
             } else {
-                System.out.println("*** tévedés, nem talált :-D ***");
+                if (t < i) {
+                    System.out.println("*** Nagyobb számra gondoltam ***");
+                } else {
+                    System.out.println("*** Kisebb számra gondoltam ***");
+                }
             }
         }
         System.out.println("*** KITALÁLTAD, a helyes tipp " + i + " ***");
