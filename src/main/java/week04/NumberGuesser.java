@@ -10,8 +10,8 @@ public class NumberGuesser {
 
         boolean b = false;
         int t = 0;
-        while (!b) {
-            System.out.println("*** Tipp: ***");
+        for (int k = 0; k < 7; k++) {
+            System.out.println("Tipp nr. " + (k + 1) + ":");
             t = sc.nextInt();
             sc.nextLine();
             if (t == i) {
@@ -24,6 +24,6 @@ public class NumberGuesser {
                 }
             }
         }
-        System.out.println("*** KITALÁLTAD, a helyes tipp " + i + " ***");
+        System.out.println(b ? "*** KITALÁLTAD, a helyes tipp " + i + " ***" : "VÉGE, sajnos nem nyert");
     }
 }
