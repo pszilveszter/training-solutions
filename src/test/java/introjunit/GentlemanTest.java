@@ -1,15 +1,13 @@
 package introjunit;
 
-import junit.framework.TestCase;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertThat;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class GentlemanTest {
+class GentlemanTest {
 
     @Test
-    public void verifyHello() {
+    void verifyHello() {
         // Given
         Gentleman gentleman = new Gentleman();
 
@@ -17,7 +15,8 @@ public class GentlemanTest {
         String hello = gentleman.sayHello("Teszt Elek");
 
         // Then
-        assertThat(hello, equalTo("HelloTeszt Elek"));
+        //assertEquals(hello, equalTo("HelloTeszt Elek"));
+        assertEquals("HelloTeszt Elek",hello);
     }
 
 
@@ -26,8 +25,9 @@ public class GentlemanTest {
     // Az új ág lefedettségét a line% mutatja, illetve a megfeleő osztályban pirossal színezi  a sor elejét
 
     @Test
-    public void verifyHelloNull() {
-        assertThat(new Gentleman().sayHello(null),equalTo("HelloAnonymus"));
+    void verifyHelloNull() {
+        //assertThat(new Gentleman().sayHello(null),equalTo("HelloAnonymus"));
+        assertEquals("HelloAnonymus", new Gentleman().sayHello(null));
     }
 
     // Bonusz1:
