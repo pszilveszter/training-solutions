@@ -6,11 +6,6 @@ public class DayInMonth {
 
         int days;
 
-        boolean leapYear = false;
-        if (year % 4 == 0) {
-            leapYear = (year % 100 == 0 & year % 400 == 0) || (year % 100 > 0 & year % 400 > 0);
-        }
-
         switch (month.toLowerCase()) {
             case "január":
             case "március":
@@ -28,6 +23,11 @@ public class DayInMonth {
                 days = 30;
                 break;
             case "február":
+                boolean leapYear = false;
+                if (year % 4 == 0) {
+                    leapYear = (year % 100 == 0 & year % 400 == 0) || (year % 100 > 0 & year % 400 > 0);
+                }
+
                 days = leapYear ? 29 : 28;
                 break;
             default:
