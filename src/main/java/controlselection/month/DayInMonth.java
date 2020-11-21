@@ -2,7 +2,7 @@ package controlselection.month;
 
 public class DayInMonth {
 
-    public static int daysInMonth(int year, String month) {
+    public int numberOfDays(int year, String month) {
 
         int days;
 
@@ -25,7 +25,7 @@ public class DayInMonth {
             case "február":
                 boolean leapYear = false;
                 if (year % 4 == 0) {
-                    leapYear = (year % 100 == 0 & year % 400 == 0) || (year % 100 > 0 & year % 400 > 0);
+                    leapYear = (year % 100 == 0 && year % 400 == 0) || (year % 100 > 0 && year % 400 > 0);
                 }
 
                 days = leapYear ? 29 : 28;
