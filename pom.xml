@@ -17,8 +17,11 @@
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.0</version>
+            <artifactId>junit-jupiter</artifactId>
+                <!--    New junit-jupiter dependency-aggregating artifact for simplified dependency management in build tools
+                        https://junit.org/junit5/docs/5.4.0/release-notes/
+                -->
+            <version>5.6.2</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

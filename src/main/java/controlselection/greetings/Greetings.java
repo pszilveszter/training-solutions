@@ -1,26 +1,19 @@
 package controlselection.greetings;
 
-import java.time.LocalTime;
-
 public class Greetings {
+    public static final int CONVERTRATE = 60;
 
-    public String greeting(LocalTime time) {
-        String greetingByTime = null;
+    public String greet(int hour, int minute) {
+        int timeInMinute = hour * CONVERTRATE + minute;
 
-        if (time.isAfter(LocalTime.of(20,0)) || time.isBefore(LocalTime.of(5,1))) {
-            greetingByTime = "Jó éjt";
-        } else if (time.isAfter(LocalTime.of(18,30))) {
-            greetingByTime = "Jó estét";
-        } else if (time.isAfter(LocalTime.of(9,0))) {
-            greetingByTime = "Jó napot";
-        } else if (time.isAfter(LocalTime.of(5,0))) {
-            greetingByTime = "Jó reggelt";
+        if (timeInMinute > 20 * CONVERTRATE || timeInMinute < 5 * CONVERTRATE + 1) {
+            return "jó éjt";
+        } else if (timeInMinute > 18 * CONVERTRATE + 30) {
+            return "jó estét";
+        } else if (timeInMinute > 9 * CONVERTRATE) {
+            return "jó napot";
+        } else {
+            return "jó reggelt";
         }
-
-        return greetingByTime;
     }
-
-
-
-
 }
