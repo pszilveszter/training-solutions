@@ -1,7 +1,7 @@
 package controlselection.consonant;
 
 public class ToConsonant {
-    public String toConsonant(char letter) {
+    public char convertToConsonant(char letter) {
         Character c = Character.toLowerCase(letter);
         int decimalCode = c.hashCode();
 
@@ -18,6 +18,6 @@ public class ToConsonant {
             default:
                 r = (char) decimalCode;
         }
-        return r.toString();
+        return r;
     }
 }

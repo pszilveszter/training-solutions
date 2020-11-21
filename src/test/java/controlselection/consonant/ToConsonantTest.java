@@ -7,17 +7,16 @@ import static org.junit.jupiter.api.Assertions.*;
 class ToConsonantTest {
 
     @Test
-    void toConsonant() {
+    public void testVowel() {
+        assertEquals('b', new ToConsonant().convertToConsonant('a'));
+        assertEquals('f', new ToConsonant().convertToConsonant('e'));
+        assertEquals('j', new ToConsonant().convertToConsonant('i'));
+    }
 
-        ToConsonant letter = new ToConsonant();
-
-        assertEquals("b", letter.toConsonant('a'));
-        assertEquals("b", letter.toConsonant('A'));
-        assertEquals("b", letter.toConsonant('b'));
-        assertEquals("f", letter.toConsonant('e'));
-        assertEquals("j", letter.toConsonant('i'));
-        assertEquals("p", letter.toConsonant('o'));
-        assertEquals("v", letter.toConsonant('u'));
-        assertEquals("z", letter.toConsonant('z'));
+    @Test
+    public void testConsonant() {
+        assertEquals('b', new ToConsonant().convertToConsonant('b'));
+        assertEquals('g', new ToConsonant().convertToConsonant('g'));
+        assertEquals('z', new ToConsonant().convertToConsonant('z'));
     }
 }
