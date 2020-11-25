@@ -6,9 +6,9 @@ import java.util.List;
 public class UsedCars {
     public List<String> filterLines(List<String> lines) {
         List<String> validLines = new ArrayList<>();
-        boolean isValid = true;
 
         for (String line: lines) {
+            boolean isValid = true;
             String[] parts = line.split(";");
             if(parts.length != 4) {
                 isValid = false;
