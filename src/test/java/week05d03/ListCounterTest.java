@@ -2,6 +2,7 @@ package week05d03;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,6 +16,8 @@ class ListCounterTest {
         List<String> testList = Arrays.asList("alma", "körte", "András");
 
         assertEquals(2,lc.countStringBeginsWithA(testList));
+        assertEquals(0,lc.countStringBeginsWithA(new ArrayList<>()));
+
     }
 
 
