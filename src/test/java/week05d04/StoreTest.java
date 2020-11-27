@@ -29,5 +29,11 @@ class StoreTest {
         assertFalse(store.addProduct(duplicatedProduct));
     }
 
+    @Test
+    void testZeroExpired() {
+        Store storeNotExpired = new Store();
+        storeNotExpired.addProduct(new Product("Not Expired",2050,12,30));
+        assertEquals(0, storeNotExpired.getNumberOfExpired());
+    }
 
 }
