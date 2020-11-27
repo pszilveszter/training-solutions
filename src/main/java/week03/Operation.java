@@ -13,8 +13,4 @@ public class Operation {
         return leftValue + rightValue;
     }
 
-    public static void main(String[] args) {
-        Operation op = new Operation("161+18");
-        System.out.println(op.getResult());
-    }
 }
