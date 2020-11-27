@@ -8,7 +8,7 @@ class OperationTest {
 
     @Test
     void testOperation() {
-        Operation op = new Operation("161+18");
+        Operation op = new Operation("  161 + 18 ");
         assertEquals(179, op.getResult());
     }
 
