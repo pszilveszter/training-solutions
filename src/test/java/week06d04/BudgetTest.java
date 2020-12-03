@@ -26,16 +26,19 @@ class BudgetTest {
 
     @Test
     void testInvalidPrice() {
-        assertThrows(IllegalArgumentException.class, ()-> new Item(-1, LocalDate.of(1999,1,1),"nyunyi"));
+        Exception ex = assertThrows(IllegalArgumentException.class, ()-> new Item(-1, LocalDate.of(1999,1,1),"nyunyi"));
+        assertEquals("Bad input!", ex.getMessage());
     }
 
     @Test
     void testEmptyName() {
-        assertThrows(IllegalArgumentException.class, ()-> new Item(1, LocalDate.of(2000,1,1),""));
+        Exception ex = assertThrows(IllegalArgumentException.class, ()-> new Item(1, LocalDate.of(2000,1,1),""));
+        assertEquals("Bad input!", ex.getMessage());
     }
 
     @Test
     void testNullName() {
-        assertThrows(IllegalArgumentException.class, ()-> new Item(1, LocalDate.of(2000,1,1),null));
+        Exception ex = assertThrows(IllegalArgumentException.class, ()-> new Item(1, LocalDate.of(2000,1,1),null));
+        assertEquals("Bad input!", ex.getMessage());
     }
 }
