@@ -1,7 +1,5 @@
 package week06d05;
 
-import java.io.UncheckedIOException;
-
 public class Biscuit {
     private String biscuitType;
     private int gramAmount;
