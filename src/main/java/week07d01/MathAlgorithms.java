@@ -8,12 +8,12 @@ public class MathAlgorithms {
         }
 
         int i = 2;
-        do {
+        while (i < x / 2) {
             if (x % i == 0) {
                 return false;
             }
             i++;
-        } while (i < x / 2);
-        return true;
+        }
+        return x > 1;
     }
 }

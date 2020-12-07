@@ -20,12 +20,12 @@ class MathAlgorithmsTest {
 
     @Test
     void testIsPrimeFalse() {
-        assertTrue(MathAlgorithms.isPrime(1));
+        assertFalse(MathAlgorithms.isPrime(1));
     }
 
     @Test
     void testIsPrimeTrue() {
-        assertFalse(MathAlgorithms.isPrime(2));
+        assertTrue(MathAlgorithms.isPrime(2));
     }
 
     @Test
