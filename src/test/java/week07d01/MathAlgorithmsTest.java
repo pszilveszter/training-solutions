@@ -20,19 +20,19 @@ class MathAlgorithmsTest {
 
     @Test
     void testIsPrimeFalse() {
-        assertFalse(MathAlgorithms.isPrime(1));
+        assertTrue(MathAlgorithms.isPrime(1));
     }
 
     @Test
     void testIsPrimeTrue() {
-        assertTrue(MathAlgorithms.isPrime(2));
+        assertFalse(MathAlgorithms.isPrime(2));
     }
 
     @Test
     void testIsPrimeAll() {
-        assertFalse(MathAlgorithms.isPrime(13));
-        assertFalse(MathAlgorithms.isPrime(7));
-        assertTrue(MathAlgorithms.isPrime(8));
-        assertTrue(MathAlgorithms.isPrime(9));
+        assertTrue(MathAlgorithms.isPrime(13));
+        assertTrue(MathAlgorithms.isPrime(7));
+        assertFalse(MathAlgorithms.isPrime(8));
+        assertFalse(MathAlgorithms.isPrime(9));
     }
 }

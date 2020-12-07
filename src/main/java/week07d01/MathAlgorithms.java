@@ -10,10 +10,10 @@ public class MathAlgorithms {
         int i = 2;
         do {
             if (x % i == 0) {
-                return true;
+                return false;
             }
             i++;
-        } while (i < x);
-        return false;
+        } while (i < x / 2);
+        return true;
     }
 }
