@@ -18,4 +18,16 @@ class DigitSumTest {
         assertEquals(6,ds.sumOfDigits(-123));
     }
 
+    @Test
+    void testDigitsumAlt() {
+        DigitSum ds = new DigitSum();
+        assertEquals(6,ds.sumOfDigitsMath(123));
+    }
+
+    @Test
+    void testNegativeDigitsumAlt() {
+        DigitSum ds = new DigitSum();
+        assertEquals(6,ds.sumOfDigitsMath(-123));
+    }
+
 }

@@ -11,4 +11,14 @@ public class DigitSum {
         }
         return  sum;
     }
+
+    public int sumOfDigitsMath(int x) {
+        int sum = 0;
+        x = Math.abs(x);
+        while (x > 0) {
+            sum += x % 10;
+            x = x / 10;
+        }
+        return  sum;
+    }
 }
