@@ -16,6 +16,7 @@ public class Transaction {
         this.transactionOperation = transactionOperation;
         this.amount = amount;
         this.dateOfTransaction = dateOfTransaction;
+        this.status = Status.CREATED;
     }
 
     public boolean isCredit() {
@@ -36,5 +37,13 @@ public class Transaction {
 
     public String getAccountNumber() {
         return accountNumber;
+    }
+
+    public void setStatusPending() {
+        status = Status.PENDING;
+    }
+
+    public void setStatusSucceeded() {
+        status = Status.SUCCEEDED;
     }
 }
