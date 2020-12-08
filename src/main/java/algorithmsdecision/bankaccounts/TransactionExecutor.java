@@ -6,37 +6,36 @@ public class TransactionExecutor {
 
     public void executeTransactions(List<Transaction> transactions, List<BankAccount> accounts) {
         for (Transaction tr : transactions) {
-            BankAccount account = null;
-            boolean accountFound = false;
-            int i = 0;
-            while (i < accounts.size() && account == null) {
-                if (tr.getAccountNumber().equals(accounts.get(i).getAccountNumber())) {
-                    account = accounts.get(i);
-                    accountFound = true;
-                    tr.setStatusPending();
-                }
-                if (accountFound) {
-                    switch (creditOrDebit(tr)) {
-                        case "Credit" :
-                            account.deposit(tr.getAmount());
-                            tr.setStatusSucceeded();
-                            break;
-                        case "Debit" :
-                            account.withdraw(tr.getAmount());
-                            tr.setStatusSucceeded();
-                            break;
-                        default :
-                    }
-                }
-                i++;
+            BankAccount account = findRelevantAccount(accounts, tr.getAccountNumber());
+            if (executeCurrentTransaction(account, tr)) {
+                tr.setStatusPending();
+            } else {
+                tr.setStatusSucceeded();
             }
         }
     }
 
-    private String creditOrDebit(Transaction tr) {
+
+    private boolean executeCurrentTransaction(BankAccount bankAccount, Transaction tr) {
+        int before = bankAccount.getBalance();
         if (tr.isCredit()) {
-            return "Credit";
+            bankAccount.deposit(tr.getAmount());
+        } else if (tr.isDebit()) {
+            bankAccount.withdraw(tr.getAmount());
         }
-        return "Debit";
+        int after = bankAccount.getBalance();
+        return before != after;
     }
+
+
+    private BankAccount findRelevantAccount(List<BankAccount> accounts, String accountNumber) {
+        BankAccount bankAccount = null;
+        for (BankAccount a : accounts) {
+            if (accountNumber.equals(a.getAccountNumber())) {
+                bankAccount = a;
+            }
+        }
+        return bankAccount;
+    }
+
 }
