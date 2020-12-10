@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Robot {
 
-    private int distance = 0;
-    private int azimut = 0;
+    private int distance;
+    private int azimut;
     private List<NavigationPoint> navigationPoints = new ArrayList<>();
 
 
@@ -21,6 +21,17 @@ public class Robot {
         return this;
     }
 
+
+    public Robot registerNavigationPoint() {
+        NavigationPoint np = new NavigationPoint(distance, azimut);
+        navigationPoints.add(np);
+        return this;
+    }
+
+
+    public String getNavigationList() {
+        return navigationPoints.toString();
+    }
 
     public int getDistance() {
         return distance;
