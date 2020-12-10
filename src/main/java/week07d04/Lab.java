@@ -31,6 +31,18 @@ public class Lab {
     }
 
 
+    public String getTitle() {
+        return title;
+    }
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public LocalDate getCompletedAt() {
+        return completedAt;
+    }
+
     @Override
     public String toString() {
         if (completed) {
