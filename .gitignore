@@ -2,5 +2,3 @@
 *.iml
 target
 /src/test/java/quickcheck/Quickies.java
-/src/main/java/week07d05/
-/src/test/java/week07d05/
