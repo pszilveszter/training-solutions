@@ -6,8 +6,7 @@ public class PhoneParser {
     public Phone phoneParser(String input) {
         String preffix = input.substring(0, 2);
         String number = input.substring(3);
-        Phone phone = new Phone(preffix,number);
-        return phone;
+        return new Phone(preffix,number);
     }
 
     public static void main(String[] args) {
