@@ -11,7 +11,7 @@ public class GuessTheNumber {
         boolean b = false;
         int t = 0;
         int k = 1;
-        while (!b & k < 8) {
+        while (!b && k < 8) {
             System.out.println("Tipp nr. " + k + ":");
             t = sc.nextInt();
             sc.nextLine();
