@@ -16,7 +16,7 @@ class StringListsTest {
     @Test
     void testStringLists() {
         List<String> result = new StringLists().stringListsUnion(a,b);
-        assertEquals(expected.toString(), result.toString());
+        assertEquals(expected, result);
     }
 
 
