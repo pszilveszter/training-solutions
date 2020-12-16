@@ -8,16 +8,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CreditCardTest {
 
-    /// FONTOS!!!
-    // feladat szerint "public CreditCard(long balance, Currency currency)"
-    // és ennek így semmi köze az inicializátorhoz::
-    // public CreditCard(long balance, Currency currency, List<Rate> upload) {
-    // teszt Rate törölve, helyette rate-ek enumból konstansba töltve még ha nem is olyan proper a dolog...
+    public final Rate[] rates = {new Rate(Currency.HUF, 1.0),
+            new Rate(Currency.EUR, 308.23),
+            new Rate(Currency.SFR, 289.24),
+            new Rate(Currency.GBP, 362.23),
+            new Rate(Currency.USD, 289.77)};
+
+//        ACTUAL_RATES.add(new Rate(Currency.HUF, 1.0));
+//        ACTUAL_RATES.add(new Rate(Currency.EUR, 308.23));
+//        ACTUAL_RATES.add(new Rate(Currency.SFR, 289.24));
+//        ACTUAL_RATES.add(new Rate(Currency.GBP, 362.23));
+//        ACTUAL_RATES.add(new Rate(Currency.USD, 289.77));
+//    }
+
 
     @Test
     public void testConstructorW3Parameters() {
         //Given
-        CreditCard card = new CreditCard(1000, Currency.EUR);
+        CreditCard card = new CreditCard(1000, Currency.EUR, Arrays.asList(rates));
         //Then
         assertEquals(308_230L, card.getBalance());
     }

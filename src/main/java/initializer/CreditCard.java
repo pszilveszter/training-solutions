@@ -18,12 +18,6 @@ public class CreditCard {
         RATE = rates;
     }
 
-    /// FONTOS!!!
-    // feladat szerint "public CreditCard(long balance, Currency currency)"
-    // és ennek így semmi köze az inicializátorhoz::
-    // public CreditCard(long balance, Currency currency, List<Rate> upload) {
-    // teszt Rate törölve, helyette rate-ek enumból konstansba töltve még ha nem is olyan proper a dolog...
-
     public CreditCard(long balance, Currency currency) {
         double exchangeRate = getExchangeRate(currency);
         this.balance = balance * exchangeRate;
@@ -32,8 +26,12 @@ public class CreditCard {
 
 
     public CreditCard(long balance) {
-        this.balance = balance;
-        this.currency = Currency.HUF;
+        this(balance, Currency.HUF);
+    }
+
+    //hát a feladat leírás nem ez a konstruktor...
+    public CreditCard(long balance, Currency currency, List<Rate> rates) {
+        this(balance, currency);
     }
 
 
