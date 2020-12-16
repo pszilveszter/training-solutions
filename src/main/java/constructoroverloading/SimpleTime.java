@@ -7,7 +7,7 @@ public class SimpleTime {
 
     public SimpleTime(int hours, int minutes) {
         if (hours < 0 || minutes < 0 || hours > 23 || minutes > 59) {
-            throw new IllegalArgumentException("Input misimatch");
+            throw new IllegalArgumentException("Input mismatch");
         }
         this.hours = hours;
         this.minutes = minutes;
