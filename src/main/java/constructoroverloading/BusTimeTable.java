@@ -31,8 +31,14 @@ public class BusTimeTable {
     }
 
 
-    public Object firstBus() {
-        return timeTable.get(0);
+    public SimpleTime firstBus() {
+        SimpleTime firstBusAt = null;
+        for (SimpleTime st: timeTable) {
+            if (firstBusAt == null || st.difference(firstBusAt) < 0) {
+                firstBusAt = st;
+            }
+        }
+        return firstBusAt;
     }
 
 

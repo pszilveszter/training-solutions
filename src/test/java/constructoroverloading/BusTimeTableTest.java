@@ -2,6 +2,7 @@ package constructoroverloading;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,7 +59,18 @@ class BusTimeTableTest {
 
     @Test
     void testFirstBus() {
-        assertEquals("14:30", new BusTimeTable(14, 16, 30).firstBus().toString());
+        // given
+        List<SimpleTime> schedules = List.of(
+                new SimpleTime(14,10),
+                new SimpleTime(15,30),
+                new SimpleTime(11,30));
+        BusTimeTable bt = new BusTimeTable(schedules);
+
+        // when
+        SimpleTime firstBus = bt.firstBus();
+
+        // then
+        assertEquals("11:30", firstBus.toString());
     }
 
 }
