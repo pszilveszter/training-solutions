@@ -25,10 +25,11 @@ class SantaClausTest {
                 personWithPresent.add(person);
             }
         }
-        assertEquals(1, personWithPresent.size());
+        assertEquals(2, personWithPresent.size());
         assertEquals(13, personWithPresent.get(0).getAge());
         assertEquals("Fiatal", personWithPresent.get(0).getName());
         assertTrue(personWithPresent.get(0).getPresent().ordinal() < 4);
+        assertTrue(personWithPresent.get(1).getPresent().ordinal() > 0);
     }
 
 }
