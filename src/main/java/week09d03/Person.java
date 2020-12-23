@@ -3,8 +3,8 @@ package week09d03;
 import java.util.Random;
 
 public class Person {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
     private Present present;
 
     public Person(String name, int age) {
@@ -15,19 +15,7 @@ public class Person {
     public void setPresent() {
         if (isWithinLimit()) {
             Random rnd = new Random();
-            switch (rnd.nextInt(3)) {
-                case 1:
-                    present = Present.Decoration;
-                    break;
-                case 2:
-                    present = Present.Electronic;
-                    break;
-                case 3:
-                    present = Present.Housekepping;
-                    break;
-                default:
-                    present = Present.Toy;
-            }
+            present = Present.values()[rnd.nextInt(Present.values().length)];
         }
     }
 

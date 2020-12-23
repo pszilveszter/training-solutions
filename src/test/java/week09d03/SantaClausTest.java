@@ -2,7 +2,7 @@ package week09d03;
 
 import org.junit.jupiter.api.Test;
 
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,16 +12,23 @@ class SantaClausTest {
 
     @Test
     void testAged14up() {
-        List<Person> p = Arrays.asList(new Person("Fiatal", 13),new Person("Felnőtt", 18));
-        SantaClaus sc = new SantaClaus(p);
+        // given
+        SantaClaus sc = new SantaClaus(Arrays.asList(new Person("Fiatal", 13),new Person("Felnőtt", 18)));
+
+        // when
         sc.getThroughChimneys();
-        int countPresent = 0;
-        for (Person person : p) {
+
+        // then
+        List<Person> personWithPresent = new ArrayList<>();
+        for (Person person : sc.getPersons()) {
             if (person.getPresent() != null) {
-                countPresent++;
+                personWithPresent.add(person);
             }
         }
-        assertEquals(1, countPresent);
+        assertEquals(1, personWithPresent.size());
+        assertEquals(13, personWithPresent.get(0).getAge());
+        assertEquals("Fiatal", personWithPresent.get(0).getName());
+        assertTrue(personWithPresent.get(0).getPresent().ordinal() < 4);
     }
 
 }
