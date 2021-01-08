@@ -12,7 +12,7 @@ public abstract class Vechile {
     public static final TransmissionType DEFAULT_TRANSMISSIONTYPE = TransmissionType.MANUAL;
 
     private int gears;
-    private TransmissionType transmissionType;
+    protected TransmissionType transmissionType;
 
     protected Vechile() {
         this.transmissionType = DEFAULT_TRANSMISSIONTYPE;
@@ -28,7 +28,7 @@ public abstract class Vechile {
         return gears;
     }
 
-    public TransmissionType getTransmissionType() {
+    public final TransmissionType getTransmissionType() {
         return transmissionType;
     }
 }
