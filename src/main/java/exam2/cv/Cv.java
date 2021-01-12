@@ -2,11 +2,10 @@ package exam2.cv;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Cv {
 
-    private String name;
+    private final String name;
     private List<Skill> skills = new ArrayList<>();
 
     public Cv(String name) {
@@ -27,11 +26,11 @@ public class Cv {
     }
 
     public void addSkills(String... newSkills) {
-        for (int i = 0; i < newSkills.length; i++) {
-            String input = newSkills[i];
-            String name = input.substring(0, input.indexOf("(") - 1);
-            int level = Integer.parseInt(input.substring(input.indexOf("(") + 1, input.indexOf(")")));
-            skills.add(new Skill(name, level));
+        for (String skillText: newSkills)
+        {
+            String skillName = skillText.substring(0, skillText.indexOf("(") - 1);
+            int level = Integer.parseInt(skillText.substring(skillText.indexOf("(") + 1, skillText.indexOf(")")));
+            skills.add(new Skill(skillName, level));
         }
     }
 
@@ -41,8 +40,7 @@ public class Cv {
                 return skill.getLevel();
             }
         }
-        //throw new SkillNotFoundException();
-        return 0;
+        throw new SkillNotFoundException();
     }
 
 }

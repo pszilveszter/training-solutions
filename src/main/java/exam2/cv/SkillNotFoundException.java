@@ -1,5 +1,4 @@
 package exam2.cv;
 
-public class SkillNotFoundException extends Throwable {
-
+public class SkillNotFoundException extends RuntimeException  {
 }

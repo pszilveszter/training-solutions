@@ -2,8 +2,8 @@ package exam2.cv;
 
 public class Skill {
 
-    private String name;
-    private int level;
+    private final String name;
+    private final int level;
 
     public Skill(String name, int level) {
         this.name = name;
