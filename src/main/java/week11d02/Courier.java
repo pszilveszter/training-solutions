@@ -7,13 +7,19 @@ public class Courier {
 
     private List<Ride> rides = new ArrayList<>();
 
+    public List<Ride> getRides() {
+        return rides;
+    }
+
+
     public void addRide(Ride ride) {
-        if (rides.size() == 0 || valid(ride)) {
+        if ((rides.isEmpty() && ride.getNr() == 1) || (!rides.isEmpty() && validNextRide(ride))) {
             rides.add(ride);
             return;
         }
-        throw new IllegalArgumentException("Invalid input!");
+        throw new IllegalArgumentException("Input mismatch!");
     }
+
 
     public int getNonWorkDay() {
         if (rides.get(0).getDay() > 1) {
@@ -30,18 +36,12 @@ public class Courier {
         return -1;
     }
 
-    private boolean valid(Ride ride) {
+
+    private boolean validNextRide(Ride ride) {
         Ride lastRide = rides.get(rides.size() - 1);
-        if (lastRide.getDay() < ride.getDay()) {
-            return true;
-        }
-
-        if (lastRide.getDay() == ride.getDay() && lastRide.getNr() < ride.getNr()) {
-            return true;
-        }
-
-        return false;
-    }
-
-
+        boolean isSameDay = ride.getDay() == lastRide.getDay();
+        boolean isDayAfter = ride.getDay() > lastRide.getDay();
+        boolean isValidNextRun = ride.getNr() == lastRide.getNr() + 1;
+        return (isSameDay && isValidNextRun) || (isDayAfter && ride.getNr() == 1);
+     }
 }
