@@ -18,19 +18,10 @@ public class GradeRunner {
         return grades;
     }
 
-    private static int getNextFiveRound(int i) {
-        while (i % 5 != 0) {
-            i++;
-        }
-        return i;
-    }
 
     private static int round(int i) {
-        if (getNextFiveRound(i) - i < 3) {
-            return getNextFiveRound(i);
-        } else {
-            return i;
-        }
+        int next = ((i / 5) + 1) * 5;
+        return next - i < 3 ? next : i;
     }
 
 }
