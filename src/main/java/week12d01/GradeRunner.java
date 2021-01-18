@@ -10,15 +10,12 @@ public class GradeRunner {
     //  Példa: a pontszám 84. 85 - 84 kevesebb mint 3, így felfelé kerekítünk.
 
     public static int[] roundGrades(int[] grades) {
-        int[] r = new int[grades.length];
         for (int i = 0; i < grades.length; i++) {
             if (grades[i] >= 40) {
-                r[i] = round(grades[i]);
-            } else {
-                r[i] = grades[i];
+                grades[i] = round(grades[i]);
             }
         }
-        return r;
+        return grades;
     }
 
     private static int getNextFiveRound(int i) {
