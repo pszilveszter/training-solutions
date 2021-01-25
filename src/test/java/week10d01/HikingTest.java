@@ -15,7 +15,14 @@ class HikingTest {
     void testSumElevation() {
         Hiking hiking = new Hiking();
         List<Double> elevation = List.of(10d, 20d, 15d, 18d);
-        assertEquals(13, hiking.getPlusElevation(elevation));
+        assertEquals(13d, hiking.getPlusElevation(elevation));
+    }
+
+    @Test
+    void testEmptyElevation() {
+        Hiking hiking = new Hiking();
+        Exception ex = assertThrows(IllegalArgumentException.class, ()-> hiking.getPlusElevation(new ArrayList<>()));
+        assertEquals("Valid list is expected", ex.getMessage());
     }
 
 }
