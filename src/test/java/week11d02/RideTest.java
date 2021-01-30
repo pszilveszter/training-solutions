@@ -11,7 +11,7 @@ class RideTest {
         Ride r = new Ride(1, 8, 10);
         assertEquals(1, r.getDay());
         assertEquals(8, r.getNr());
-        assertEquals(1, r.getDistance());
+        assertEquals(10, r.getDistance());
     }
 
     @Test
