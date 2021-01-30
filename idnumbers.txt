@@ -1,0 +1,6 @@
+abc123
+a1b2c3
+a12bc3
+a123bc
+ab123c
+ab12c3
