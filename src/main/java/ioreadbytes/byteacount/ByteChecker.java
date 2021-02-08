@@ -16,9 +16,10 @@ public class ByteChecker {
             int count = 0;
             while ((size = is.read(buffer)) > 0) {
                 for (byte data: buffer) {
-                    if ((byte) 'a' == data) {
+                    if (data == (byte) 'a') {
                         count++;
                     }
+                    buffer = new byte[1000];
                 }
             }
             return count;
