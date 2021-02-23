@@ -8,7 +8,7 @@ public class Installer {
     public void install(String path) {
         Path output = Path.of(path);
         if (Files.notExists(output) || !Files.isDirectory(output)) {
-            throw new IllegalArgumentException("Output directory does not exist! " + output);
+            throw new IllegalArgumentException("The given directory doesn't exist");
         }
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(Installer.class.getResourceAsStream("/Install/Install.txt")))) {
