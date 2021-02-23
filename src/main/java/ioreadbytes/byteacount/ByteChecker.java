@@ -25,7 +25,7 @@ public class ByteChecker {
             return count;
         }
         catch (IOException ioe) {
-            throw new IllegalStateException("Unable to read file, ioe");
+            throw new IllegalStateException("Unable to read file", ioe);
         }
     }
 }
