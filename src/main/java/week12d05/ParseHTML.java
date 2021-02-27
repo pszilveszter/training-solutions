@@ -2,21 +2,18 @@ package week12d05;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class ParseHTML {
 
-    public int countExpressionFromFile(String expression) {
+    public int countExpressionFromFile(String expression, BufferedReader reader) {
         int countAll = 0;
-        Path file = Path.of("week12d05").resolve("index.html");
-        try (BufferedReader reader = Files.newBufferedReader(file)) {
+        try {
             String line;
             while ((line = reader.readLine()) != null) {
                 countAll += countString(expression, line.toLowerCase());
             }
         } catch (IOException ioe) {
-            throw new IllegalStateException("Unable to read file " + file, ioe);
+            throw new IllegalStateException("Unable to read file ", ioe);
         }
         return countAll;
     }
