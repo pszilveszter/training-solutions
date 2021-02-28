@@ -65,7 +65,7 @@ public class FlightManager {
 
     public Flight earliestFlight() {
         Flight first = null;
-        for (Flight f: flights) {
+        for (Flight f: getDepratureFlights()) {
             if (first == null || first.getTime().isAfter(f.getTime())) {
                 first = f;
             }
@@ -80,6 +80,17 @@ public class FlightManager {
 
     private void addFlight(String... s) {
         flights.add(new Flight(s[0], getFlightDirection(s[1]), s[2], LocalTime.parse(s[3], DateTimeFormatter.ofPattern("H:m"))));
+    }
+
+
+    private List<Flight> getDepratureFlights() {
+        List<Flight> dep = new ArrayList<>();
+        for (Flight f: flights) {
+            if (FlightDirection.DEPARTURE == f.getDirection()) {
+                dep.add(f);
+            }
+        }
+        return dep;
     }
 
 
