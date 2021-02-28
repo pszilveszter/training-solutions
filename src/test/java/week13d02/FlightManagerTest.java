@@ -86,7 +86,7 @@ class FlightManagerTest {
         fm.readFromFile(reader);
         Flight first = fm.earliestFlight();
 
-        assertEquals(LocalTime.of(6,01), first.getTime());
+        assertEquals(LocalTime.of(6,1), first.getTime());
         assertEquals("JE9763", first.getNumber());
     }
 }
