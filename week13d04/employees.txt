@@ -1,0 +1,4 @@
+Az alkalmazott neve: Remek Elek, születési éve: 1999
+Az alkalmazott neve: Tóth Ottó, születési éve: 1998
+Az alkalmazott neve: Rendes Renáta, születési éve: 1997
+Az alkalmazott neve: Tente Levente, születési éve: 1996
