@@ -1,4 +1,4 @@
-package collectionsset.Collecionshashset;
+package collectionsset.collecionshashset;
 
 import helper.RandomStringGenerator;
 import org.junit.jupiter.api.Test;
