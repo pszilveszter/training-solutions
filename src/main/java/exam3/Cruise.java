@@ -59,7 +59,7 @@ public class Cruise {
     }
 
     public List<String> getPassengerNamesOrdered() {
-        ArrayList al = new ArrayList();
+        List<String> al = new ArrayList<>();
         for (Passenger p: passengers) {
             al.add(p.getName());
         }
@@ -76,6 +76,15 @@ public class Cruise {
     }
 
     public Map<CruiseClass, Integer> countPassengerByClass() {
-        return null; // :-(
+        EnumMap<CruiseClass, Integer> m = new EnumMap<>(CruiseClass.class);
+        for (Passenger p: passengers) {
+            CruiseClass cc = p.getCruiseClass();
+            if (!m.containsKey(cc)) {
+                m.put(cc, 1);
+            } else {
+                m.put(cc, m.get(cc) + 1);
+            }
+        }
+        return m;
     }
 }
