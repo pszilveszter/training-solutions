@@ -12,10 +12,11 @@ public class OrderedLibrary {
 
     public Book lendFirstBook() {
         Iterator<Book> iLib = library.iterator();
-        if (iLib.hasNext()) {
-            return iLib.next();
+        if (!iLib.hasNext()) {
+            throw new NullPointerException("Libray is empty!");
         }
+        Set<Book> orderedCopy = new TreeSet<>(library);
+        return orderedCopy.iterator().next();
 
-        throw new NullPointerException("Libray is empty!");
     }
 }
