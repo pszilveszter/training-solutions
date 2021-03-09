@@ -2,8 +2,6 @@ package collectionsclass;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
-
 public class Book implements Comparable<Book> {
 
     private int id;
@@ -30,7 +28,7 @@ public class Book implements Comparable<Book> {
 
     @Override
     public int compareTo(@NotNull Book o) {
-        return Integer.valueOf(id).compareTo(Integer.valueOf(o.id));
+        return Integer.compare(this.id, o.id);
     }
 
     @Override
