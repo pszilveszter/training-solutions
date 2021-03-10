@@ -21,7 +21,8 @@ class GraphTest {
         points.put(1, 15);
 
         Graph input = new Graph();
-        assertEquals("1=15", input.getMaxPoint(points).toString());
+        assertEquals(1, input.getMaxPoint(points).getKey());
+        assertEquals(15, input.getMaxPoint(points).getValue());
 
     }
 
