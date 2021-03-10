@@ -1,7 +1,5 @@
 package week15d01;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -14,7 +12,7 @@ class GraphTest {
 
     @Test
     void testGraph() {
-        Map<Integer, Integer> points = new HashMap();
+        Map<Integer, Integer> points = new HashMap<>();
         points.put(-4, -6);
         points.put(-9, -11);
         points.put(-1, 7);
