@@ -1,0 +1,7 @@
+package week15d04;
+
+public enum Position {
+    DATE, DAY, MONTH, YEAR, CASE, DEATH, COUNTRY_NAME, GEO, COUNTRY_CODE, POPULATION, CONTINENT;
+
+
+}
