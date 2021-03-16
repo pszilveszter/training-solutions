@@ -7,7 +7,6 @@ import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.sql.SQLException;
 import java.time.LocalDateTime;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,7 +28,7 @@ class ActivityDaoTest {
             throw new IllegalStateException("Could not connect database", se);
         }
 
-        Flyway fw = Flyway.configure().dataSource(ds).load();
+        Flyway fw = Flyway.configure().locations("/db/migration/activityTracker").dataSource(ds).load();
         fw.clean();
         fw.migrate();
 
@@ -43,17 +42,19 @@ class ActivityDaoTest {
 
     @Test
     void testSelectById() {
-        assertEquals(ActivityType.BIKING, ad.getRecords(1).getType());
-        assertEquals(LocalDateTime.of(2000, 12, 3, 10, 23), ad.getRecords(1).getStartTime());
-        assertEquals("Biking around Balaton", ad.getRecords(1).getDesc());
-        assertEquals(1L, ad.getRecords(1).getId());
+        assertEquals(ActivityType.BIKING, ad.findActivityById(1).getType());
+        assertEquals(LocalDateTime.of(2000, 12, 3, 10, 23), ad.findActivityById(1).getStartTime());
+        assertEquals("Biking around Balaton", ad.findActivityById(1).getDesc());
+        assertEquals(1L, ad.findActivityById(1).getId());
     }
 
     @Test
     void testInsertActivity() {
         Activity a = new Activity(LocalDateTime.of(2020,3,17, 11, 0), "Biking around the world", ActivityType.BIKING);
-        ad.processActivities(List.of(a));
+
+        Activity result = ad.saveActivity((a));
         assertEquals(4, ad.readAll().size());
+        assertEquals(4, ad.findActivityById(result.getId()).getId());
     }
 
 }

@@ -20,7 +20,7 @@ public class ActivityDao {
         try (Connection con = ds.getConnection();
              PreparedStatement ps = con.prepareStatement("SELECT * FROM activities ORDER BY id")
         ) {
-            return retrieveRecord(ps);
+            return listActivities(ps);
         }
         catch (SQLException se) {
             throw new IllegalStateException("Could not read data", se);
@@ -28,12 +28,12 @@ public class ActivityDao {
     }
 
 
-    public Activity getRecords(long id) {
+    public Activity findActivityById(long id) {
         try (Connection con = ds.getConnection();
              PreparedStatement ps = con.prepareStatement("SELECT * FROM activities WHERE id = ?")
         ) {
             ps.setLong(1, id);
-            List<Activity> activities = retrieveRecord(ps);
+            List<Activity> activities = listActivities(ps);
             if (activities.size() == 1) {
                 return activities.get(0);
             }
@@ -45,20 +45,26 @@ public class ActivityDao {
     }
 
 
-    public void processActivities(List<Activity> activites) {
+    public Activity saveActivity(Activity newActivity) {
         try (Connection con = ds.getConnection();
-             PreparedStatement script = con.prepareStatement("INSERT INTO activities VALUES (?, ?, ?, ?)")
+             PreparedStatement script = con.prepareStatement("INSERT INTO activities VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS)
         ) {
-            for (Activity a: activites) {
-                insertActivity(script, a);
+            insertActivity(script, newActivity);
+            try (ResultSet rs = script.getGeneratedKeys()) {
+                if (rs.next()) {
+                    long id = rs.getLong(1);
+                    return new Activity(id, newActivity.getStartTime(), newActivity.getDesc(), newActivity.getType());
+
+                }
             }
+            throw new IllegalStateException("Could not get key");
         }
         catch (SQLException se) {
             throw new IllegalStateException("Unable to insert record", se);
         }
     }
 
-    private List<Activity> retrieveRecord(PreparedStatement ps) {
+    private List<Activity> listActivities(PreparedStatement ps) {
         List<Activity> result = new ArrayList<>();
         try (ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
