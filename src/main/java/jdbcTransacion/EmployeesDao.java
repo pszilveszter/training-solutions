@@ -20,22 +20,26 @@ public class EmployeesDao {
         try (Connection dbc = mds.getConnection())
         {
             dbc.setAutoCommit(false);
-            try (PreparedStatement ps = dbc.prepareStatement("INSERT INTO employees (emp_name) VALUES (?)")) {
-                for (String name: employeNames) {
-                    if (name.startsWith("X")) {
-                        throw new IllegalArgumentException("Invalid name");
-                    }
-                    ps.setString(1, name);
-                    ps.executeUpdate();
-                }
-                dbc.commit();
-            }
-            catch (IllegalArgumentException iae) {
-                dbc.rollback();
-            }
+            processTransaction(employeNames, dbc);
         }
         catch (SQLException se) {
             throw new IllegalStateException("Unable to write data!", se);
+        }
+    }
+
+    private void processTransaction(List<String> employeNames, Connection dbc) throws SQLException {
+        try (PreparedStatement ps = dbc.prepareStatement("INSERT INTO employees (emp_name) VALUES (?)")) {
+            for (String name: employeNames) {
+                if (name.startsWith("X")) {
+                    throw new IllegalArgumentException("Invalid name");
+                }
+                ps.setString(1, name);
+                ps.executeUpdate();
+            }
+            dbc.commit();
+        }
+        catch (IllegalArgumentException iae) {
+            dbc.rollback();
         }
     }
 

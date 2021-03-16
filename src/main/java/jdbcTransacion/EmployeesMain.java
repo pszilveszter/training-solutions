@@ -20,6 +20,7 @@ public class EmployeesMain {
 
             EmployeesDao ed = new EmployeesDao(ds);
             Long id = ed.createEmployee("John Rambo");
+            System.out.println(id);
             System.out.println(ed.listEmployeeNames());
             System.out.println(ed.getEmployeeName(4));
         } catch (
