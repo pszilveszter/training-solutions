@@ -1,6 +1,5 @@
 package jdbcGetGeneratedKey;
 
-import jdbcGetGeneratedKey.EmployeesDao;
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
